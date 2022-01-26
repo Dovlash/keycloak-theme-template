@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #616A6F;
+  --primary-color: #3FA1E3;
+  --primary-hover-color: #3194D7;
+  --border-color: #EFF0F0;
+  --login-border-color: transparent;
+  --N10-color: #F5F7F9;
+  --N20-color: #DADFE2;
+  --N40-color: #828D95;
+  --white-color: #fff;
+  --radius: 4px;
+  --login-width: 320px;
+  --font: 'Inter', 'Hevletica Neue', Helvetica, Arial, sans-serif;
+  --pf-global--FontFamily--sans-serif: var(--font);
+  --pf-global--BorderWidth--sm: 1px;
+}
+
+
+.pf-c-button {
+  --pf-c-button--m-primary--BackgroundColor: var(--primary-color);
+  --pf-c-button--m-primary--Color: #fff;
+  --pf-c-button--m-primary--hover--BackgroundColor: var(--primary-hover-color);
+  --pf-c-button--m-primary--hover--Color: #fff;
+  transition: .2s;
+}
+.pf-m-primary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.pf-c-form-control {
+  --pf-c-form-control--PaddingTop: 8px;
+  --pf-c-form-control--PaddingBottom: 8px;
+  --pf-c-form-control--PaddingRight: 16px;
+  --pf-c-form-control--PaddingLeft: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--N20-color);
+  transition: border-color .2s;
+}
+.pf-c-form-control:hover,
+.pf-c-form-control:focus {
+  border-color: var(--N40-color);
+  box-shadow: none;
+  border-width: var(--pf-global--BorderWidth--sm);
+  padding: var(--pf-c-form-control--PaddingTop) var(--pf-c-form-control--PaddingRight) var(--pf-c-form-control--PaddingBottom) var(--pf-c-form-control--PaddingLeft);
+}
+
+.pf-c-form__label-text {
+  margin-bottom: 2px;
+  color: var(--N40-color);
+}
+
+.login-pf body {
+  background-image: none;
+  background-color: var(--bg-color);
+}
+.login-pf-page {
+  height: 100vh;
+  padding: 30px;
+}
+.login-pf-page .card-pf {
+  box-shadow: none;
+  border-radius: var(--radius);
+  border: 0;
+  max-width: var(--login-width);
+  padding: 0;
+  box-shadow: 0 0 0 1px var(--login-border-color);
+}
+.login-pf-page .login-pf-header {
+  margin: 0;
+  padding: 20px 30px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.kc-logo-text {
+  width: 200px;
+  height: 64px;
+  background-position: center;
+  background-size: contain;
+}
+#kc-content-wrapper {
+  margin-top: 0;
+}
+.pf-c-button {
+  border-radius: var(--radius);
+}
+.kc-form-body {
+  padding: 0 30px;
+  padding-top: 32px;
+}
+.kc-form-foot .pf-c-button.pf-m-primary {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 24px 20px;
+}
+.kc-tabs {
+  display: flex;
+}
+.kc-tab {
+  flex: 1;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: var(--N10-color);
+  color: var(--N40-color);
+  cursor: pointer;
+  transition: .2s;
+}
+.kc-tab:hover {
+  color: var(--main-color);
+}
+.kc-tab-active, .kc-tab-active:hover {
+  cursor: default;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  box-shadow: inset 0 2px 0 var(--primary-color);
+}
+
+@media (min-width: 992px) {
+  .login-pf-page {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
