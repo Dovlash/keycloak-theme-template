@@ -9,12 +9,20 @@
   --N10-color: #F5F7F9;
   --N20-color: #DADFE2;
   --N40-color: #828D95;
+  --danger-color: #F95656;
+  --danger-color-light: #FEE6E6;
+  --warning-color: #FDE052;
+  --warning-color-light: #FEF7D3;
+  --success-color: #63DB97;
+  --success-color-light: #E8FAF0;
   --white-color: #fff;
   --radius: 4px;
   --login-width: 320px;
   --font: 'Inter', 'Hevletica Neue', Helvetica, Arial, sans-serif;
+
   --pf-global--FontFamily--sans-serif: var(--font);
   --pf-global--BorderWidth--sm: 1px;
+  --pf-global--danger-color--200: var(--danger-color);
 }
 
 
@@ -27,6 +35,12 @@
 }
 .pf-m-primary:hover {
   background-color: var(--primary-hover-color);
+}
+.pf-c-button-fat {
+  height: 42px;
+}
+.pf-c-button::after {
+  display: none;
 }
 
 .pf-c-form-control {
@@ -89,13 +103,39 @@ div.kc-logo-text {
 }
 .kc-form-body {
   padding: 0 30px;
+}
+.kc-form-body-register {
   padding-top: 32px;
+  padding-bottom: 24px;
+}
+.kc-form-foot {
+  margin-bottom: 0;
 }
 .kc-form-foot .pf-c-button.pf-m-primary {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   padding: 24px 20px;
 }
+.kc-form-wrapper-login + #kc-info,
+#kc-reset-password-form + #kc-info {
+  display: none;
+}
+.kc-info {
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  color: var(--N40-color);
+}
+.kc-form-options-pass {
+  padding-top: 16px;
+}
+
+.kc-or-msg {
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+/* Login/Registration Tabs */
 .kc-tabs {
   display: flex;
 }
@@ -112,12 +152,140 @@ div.kc-logo-text {
 }
 .kc-tab:hover {
   color: var(--main-color);
+  text-decoration: none;
+  background-color: var(--N20-color);
+}
+.kc-tab:focus {
+  text-decoration: none;
+  outline: none;
 }
 .kc-tab-active, .kc-tab-active:hover {
   cursor: default;
   background-color: var(--white-color);
   color: var(--primary-color);
   box-shadow: inset 0 2px 0 var(--primary-color);
+}
+
+/* Social Providers */
+.kc-social-grid {
+  --pf-l-grid__item--GridColumnEnd: span 0;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+.kc-social-item {
+  background-color: var(--primary-color);
+  border: 0 !important;
+  border-radius: var(--radius);
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.kc-social-item::after {
+  display: none;
+}
+.kc-social-item:hover {
+  color: var(--white-color);
+}
+.kc-social-provider-logo {
+  color: var(--white-color);
+}
+.kc-social-provider-name {
+  color: var(--white-color);
+}
+#social-google {
+  background-color: #4285F5;
+}
+#social-google:hover {
+  background-color: #3171df;
+}
+#social-facebook {
+  background-color: #4267B2;
+}
+#social-facebook:hover {
+  background-color: #335394;
+}
+#social-linkedin {
+  background-color: #0078B6;
+}
+#social-linkedin:hover {
+  background-color: #026698;
+}
+#social-microsoft {
+  background-color: #00A4EF;
+}
+#social-microsoft:hover {
+  background-color: #058ece;
+}
+#social-openshift-v3,
+#social-openshift-v4 {
+  background-color: #D20000;
+}
+#social-openshift-v3:hover,
+#social-openshift-v4:hover {
+  background-color: #a90404;
+}
+#social-gitlab {
+  background-color: #E2432A;
+}
+#social-gitlab:hover {
+  background-color: #ba341f;
+}
+#social-paypal {
+  background-color: #169BD7;
+}
+#social-paypal:hover {
+  background-color: #0e84ba;
+}
+#social-stackoverflow {
+  background-color: #F48024;
+}
+#social-stackoverflow:hover {
+  background-color: #d36b15;
+}
+#social-github {
+  background-color: #333333;
+}
+#social-github:hover {
+  background-color: #222222;
+}
+#social-bitbucket {
+  background-color: #2684FF;
+}
+#social-bitbucket:hover {
+  background-color: #2378e8;
+}
+#social-twitter {
+  background-color: #55ACEE;
+}
+#social-twitter:hover {
+  background-color: #4391cd;
+}
+
+
+/* Alert */
+.pf-c-alert.pf-m-inline {
+  padding: 0 0.25rem;
+  border-width: 0;
+  background-color: var(--danger-color-light);
+}
+.pf-c-alert.pf-m-inline.pf-m-danger::before {
+  display: none;
+}
+
+/* Info Message on Reset Password Page */
+#kc-info {
+  margin: 0;
+}
+#kc-info-wrapper {
+  background-color: transparent;
+}
+
+/* Powered by phasetwo */
+.kc-powered {
+  position: relative;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 @media (min-width: 992px) {
