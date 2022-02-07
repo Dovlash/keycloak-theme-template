@@ -9,6 +9,7 @@
   --N10-color: #F5F7F9;
   --N20-color: #DADFE2;
   --N40-color: #828D95;
+  --N60-color: #3C474E;
   --danger-color: #F95656;
   --danger-color-light: #FEE6E6;
   --warning-color: #FDE052;
@@ -22,10 +23,18 @@
 
   --pf-global--FontFamily--sans-serif: var(--font);
   --pf-global--BorderWidth--sm: 1px;
+  --pf-global--danger-color--100: var(--danger-color);
   --pf-global--danger-color--200: var(--danger-color);
 }
 
 
+body, p, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
+  color: var(--N60-color);
+}
+p, h1, h2, h3, h4, h5, h6 {
+  color: var(--N60-color);
+}
 .pf-c-button {
   --pf-c-button--m-primary--BackgroundColor: var(--primary-color);
   --pf-c-button--m-primary--Color: #fff;
@@ -58,6 +67,12 @@
   box-shadow: none;
   border-width: var(--pf-global--BorderWidth--sm);
   padding: var(--pf-c-form-control--PaddingTop) var(--pf-c-form-control--PaddingRight) var(--pf-c-form-control--PaddingBottom) var(--pf-c-form-control--PaddingLeft);
+}
+.pf-c-form-control[aria-invalid="true"] {
+  background-position-y: 11px;
+}
+.pf-c-form-control[aria-invalid="true"]:focus-visible {
+  outline-color: var(--pf-global--danger-color--100);
 }
 
 .pf-c-form__label-text {
@@ -130,6 +145,26 @@ div.kc-logo-text {
   padding-top: 16px;
 }
 
+.kc-error {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.kc-error h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.kc-error p {
+  font-size: 14px;
+  margin: 0;
+}
+.kc-picto {
+  margin-bottom: 16px;
+}
+.kc-picto svg {
+  width: 64px;
+  height: auto;
+}
 .kc-or-msg {
   font-size: 14px;
   margin: 20px 0;
