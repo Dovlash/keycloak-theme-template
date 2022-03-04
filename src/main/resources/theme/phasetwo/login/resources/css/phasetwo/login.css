@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
-  --bg-color: #616A6F;
-  --primary-color: #3FA1E3;
-  --primary-hover-color: #3194D7;
-  --border-color: #EFF0F0;
-  --login-border-color: transparent;
   --N10-color: #F5F7F9;
   --N20-color: #DADFE2;
   --N40-color: #828D95;
@@ -20,6 +15,19 @@
   --radius: 4px;
   --login-width: 320px;
   --font: 'Inter', 'Hevletica Neue', Helvetica, Arial, sans-serif;
+
+
+  --bg-color: #616A6F;
+  --fg-color: var(--white-color);
+  --primary-color: #3FA1E3;
+  --primary-hover-color: #3194D7;
+  --border-color: #EFF0F0;
+  --login-border-color: transparent;
+  --tab-bg-color: var(--N10-color);
+  --tab-bg-hover-color: var(--N20-color);
+  --tab-bg-active-color: var(--fg-color);
+
+  --default-logo: url('../../img/phasetwo/phasetwo.png');
 
   --pf-global--FontFamily--sans-serif: var(--font);
   --pf-global--BorderWidth--sm: 1px;
@@ -50,6 +58,26 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .pf-c-button::after {
   display: none;
+}
+
+.card-pf {
+  background-color: var(--fg-color);
+  position: relative;
+}
+
+/* Powered by phasetwo */
+.card-pf::after {
+  content: "";
+  display: block;
+  width: 122px;
+  height: 15px;
+  background-image: url('../../img/phasetwo/powered-by-phasetwo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .pf-c-form-control {
@@ -117,6 +145,7 @@ div.kc-logo-text {
   height: 64px;
   background-position: center;
   background-size: contain;
+  background-image: var(--default-logo);
 }
 #kc-content-wrapper {
   margin-top: 0;
@@ -213,7 +242,7 @@ ol#kc-totp-settings > li + li {
   text-align: center;
   font-size: 14px;
   font-weight: 700;
-  background-color: var(--N10-color);
+  background-color: var(--tab-bg-color);
   color: var(--N40-color);
   cursor: pointer;
   transition: .2s;
@@ -221,7 +250,7 @@ ol#kc-totp-settings > li + li {
 .kc-tab:hover {
   color: var(--main-color);
   text-decoration: none;
-  background-color: var(--N20-color);
+  background-color: var(--tab-bg-hover-color);
 }
 .kc-tab:focus {
   text-decoration: none;
@@ -229,7 +258,7 @@ ol#kc-totp-settings > li + li {
 }
 .kc-tab-active, .kc-tab-active:hover {
   cursor: default;
-  background-color: var(--white-color);
+  background-color: var(--tab-bg-active-color);
   color: var(--primary-color);
   box-shadow: inset 0 2px 0 var(--primary-color);
 }
@@ -345,15 +374,6 @@ ol#kc-totp-settings > li + li {
 }
 #kc-info-wrapper {
   background-color: transparent;
-}
-
-/* Powered by phasetwo */
-.kc-powered {
-  position: relative;
-  top: 32px;
-  left: 0;
-  width: 100%;
-  text-align: center;
 }
 
 @media (min-width: 992px) {
